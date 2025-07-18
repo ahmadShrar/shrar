@@ -1,0 +1,264 @@
+
+<!-- saved from url=(0041)http://127.0.0.1/HospitalSystem/index.php -->
+<html bbai-tooltip-injected="true"><script id="allow-copy_script" src="chrome-extension://aefehdhdciieocakfobpaaolhipkcpgc/content_scripts/copy.js"></script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>HospitalSystem</title>
+	<link rel="shortcut icon" type="image/x-icon" href="http://127.0.0.1/HospitalSystem/images/hospital.png">
+<link rel="stylesheet" type="text/css" href="./HospitalSystem_files/style1.css">
+<link href="./HospitalSystem_files/css" rel="stylesheet">
+<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"> -->
+
+<link rel="stylesheet" href="./HospitalSystem_files/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<link rel="stylesheet" href="./HospitalSystem_files/font-awesome.min.css">
+<link href="./HospitalSystem_files/bootstrap(1).min.css" rel="stylesheet" id="bootstrap-css">
+
+<style>
+     .form-control {
+    border-radius: 0.75rem;
+}
+</style>
+
+<script>
+    var check = function() {
+  if (document.getElementById('password').value ==
+    document.getElementById('cpassword').value) {
+    document.getElementById('message').style.color = '#5dd05d';
+    document.getElementById('message').innerHTML = 'Matched';
+  } else {
+    document.getElementById('message').style.color = '#f55252';
+    document.getElementById('message').innerHTML = 'Not Matching';
+  }
+}
+
+function alphaOnly(event) {
+  var key = event.keyCode;
+  return ((key >= 65 && key <= 90) || key == 8 || key == 32);
+};
+
+function checklen()
+{
+    var pass1 = document.getElementById("password");  
+    if(pass1.value.length<6){  
+        alert("Password must be at least 6 characters long. Try again!");  
+        return false;  
+  }  
+}
+
+</script>
+
+</head>
+
+<!------ Include the above in your HEAD tag ---------->
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+
+      <a class="navbar-brand js-scroll-trigger" href="http://127.0.0.1/HospitalSystem/index.php#" style="margin-top: 10px;margin-left:-65px;font-family: &#39;IBM Plex Sans&#39;, sans-serif;"><h4><i class="fa fa-user-plus" aria-hidden="true"></i>&nbsp; GLOBAL HOSPITALS</h4></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item" style="margin-right: 40px;">
+            <a class="nav-link js-scroll-trigger" href="http://127.0.0.1/HospitalSystem/index.php" style="color: white;font-family: &#39;IBM Plex Sans&#39;, sans-serif;"><h6>HOME</h6></a>
+          </li>
+  
+          <li class="nav-item" style="margin-right: 40px;">
+            <a class="nav-link js-scroll-trigger" href="http://127.0.0.1/HospitalSystem/services.html" style="color: white;font-family: &#39;IBM Plex Sans&#39;, sans-serif;"><h6>ABOUT US</h6></a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="http://127.0.0.1/HospitalSystem/contact.html" style="color: white;font-family: &#39;IBM Plex Sans&#39;, sans-serif;"><h6>CONTACT</h6></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+	
+
+<div class="container register" style="font-family: &#39;IBM Plex Sans&#39;, sans-serif;">
+                <div class="row">
+                    <div class="col-md-3 register-left" style="margin-top: 10%;right: 5%">
+                        <img src="./HospitalSystem_files/ambulance1.png" alt="">
+                        <h3>Welcome</h3>
+                       
+                    </div>
+                    <div class="col-md-9 register-right" style="margin-top: 40px;left: 80px;">
+                        <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist" style="width: 40%;">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="http://127.0.0.1/HospitalSystem/index.php#home" role="tab" aria-controls="home" aria-selected="true">Patient</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="http://127.0.0.1/HospitalSystem/index.php#profile" role="tab" aria-controls="profile" aria-selected="false">Doctor</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="http://127.0.0.1/HospitalSystem/index.php#admin" role="tab" aria-controls="admin" aria-selected="false">Receptionist</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <h3 class="register-heading">Register as Patient</h3>
+                                <form method="post" action="http://127.0.0.1/HospitalSystem/func2.php">
+                                <div class="row register-form">
+                                    
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="First Name *" name="fname" onkeydown="return alphaOnly(event);" required="">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" placeholder="Your Email *" name="email">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control" placeholder="Password *" id="password" name="password" onkeyup="check();" required="">
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <div class="maxl">
+                                                <label class="radio inline"> 
+                                                    <input type="radio" name="gender" value="Male" checked="">
+                                                    <span> Male </span> 
+                                                </label>
+                                                <label class="radio inline"> 
+                                                    <input type="radio" name="gender" value="Female">
+                                                    <span>Female </span> 
+                                                </label>
+                                            </div>
+                                            <a href="http://127.0.0.1/HospitalSystem/index1.php">Already have an account?</a>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Last Name *" name="lname" onkeydown="return alphaOnly(event);" required="">
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <input type="tel" minlength="10" maxlength="10" name="contact" class="form-control" placeholder="Your Phone *">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control" id="cpassword" placeholder="Confirm Password *" name="cpassword" onkeyup="check();" required=""><span id="message"></span>
+                                        </div>
+                                        <input type="submit" class="btnRegister" name="patsub1" onclick="return checklen();" value="Register">
+                                    </div>
+
+                                </div>
+                            </form>
+                            </div>
+
+                            
+                            <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                <h3 class="register-heading">Login as Doctor</h3>
+                                <form method="post" action="http://127.0.0.1/HospitalSystem/func1.php">
+                                <div class="row register-form">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="User Name *" name="username3" onkeydown="return alphaOnly(event);" required="">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="password" class="form-control" placeholder="Password *" name="password3" required="">
+                                        </div>
+                                        
+                                        <input type="submit" class="btnRegister" name="docsub1" value="Login">
+                                    </div>
+                                </div>
+                            </form>
+                            </div>
+
+
+                            <div class="tab-pane fade show" id="admin" role="tabpanel" aria-labelledby="profile-tab">
+                                <h3 class="register-heading">Login as Admin</h3>
+                                <form method="post" action="http://127.0.0.1/HospitalSystem/func3.php">
+                                <div class="row register-form">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="User Name *" name="username1" onkeydown="return alphaOnly(event);" required="">
+                                        </div>
+                                        
+
+
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="password" class="form-control" placeholder="Password *" name="password2" required="">
+                                        </div>
+                                        
+                                        <input type="submit" class="btnRegister" name="adsub" value="Login">
+                                    </div>
+                                </div>
+                            </form>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+    
+
+    <script src="./HospitalSystem_files/jquery-3.3.1.slim.min.js.تنزيل" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="./HospitalSystem_files/popper.min.js.تنزيل" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="./HospitalSystem_files/bootstrap.min.js.تنزيل" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script src="./HospitalSystem_files/bootstrap.min(1).js.تنزيل" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    
+
+  <div id="chrome-extension-boilerplate-react-vite-content-view-root"><template shadowrootmode="open"><style>
+  :host {
+    all: initial; /* Reset styles to avoid inheriting from the host page */
+    font-size: 16px; /* Set the base font size for rem calculations */
+  }
+  *, *::before, *::after {
+    box-sizing: border-box; /* Include padding and border in element's total width/height */
+  }
+</style><div id="shadow-root"></div></template></div><div id="bbai-shadow-wrapper"><template shadowrootmode="open"><style>
+      :host {
+        all: initial !important;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif !important;
+      }
+      * {
+        box-sizing: border-box !important;
+      }
+      .bbai-tooltip {
+        position: fixed !important;
+        z-index: 999999 !important;
+        background: white !important;
+        border-radius: 8px !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+        padding: 8px 12px !important;
+        font-size: 13px !important;
+        line-height: 1.4 !important;
+        color: #1a1a1a !important;
+        pointer-events: all !important;
+        cursor: pointer !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        transform: translateY(4px) !important;
+        transition: all 0.2s ease !important;
+      }
+      .bbai-tooltip.show {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translateY(0) !important;
+      }
+      .bbai-tooltip-content {
+        display: flex !important;
+        align-items: center !important;
+        gap: 4px !important;
+        white-space: nowrap !important;
+      }
+      .bbai-tooltip-content span {
+        font-weight: 500 !important;
+      }
+    </style><div class="bbai-tooltip">
+        <div class="bbai-tooltip-content">
+          <svg width="16" height="16" viewBox="0 0 469 469" fill="none" xmlns="http://www.w3.org/2000/svg" shaperendering="geometricPrecision" stroke="currentColor" strokelinecap="round" strokelinejoin="round" strokewidth="1.5">
+            <path d="M237.092 62.3004L266.754 71.4198C267.156 71.5285 267.51 71.765 267.765 72.0934C268.02 72.4218 268.161 72.8243 268.166 73.2399C268.172 73.6555 268.042 74.0616 267.796 74.3967C267.55 74.7318 267.201 74.9777 266.803 75.097L237.141 84.3145C236.84 84.4058 236.566 84.5699 236.344 84.7922C236.121 85.0146 235.957 85.2883 235.866 85.5893L226.747 115.252C226.638 115.653 226.401 116.008 226.073 116.263C225.745 116.517 225.342 116.658 224.926 116.664C224.511 116.669 224.105 116.539 223.77 116.293C223.435 116.047 223.189 115.699 223.069 115.301L213.852 85.6383C213.761 85.3374 213.597 85.0636 213.374 84.8412C213.152 84.6189 212.878 84.4548 212.577 84.3635L182.914 75.2441C182.513 75.1354 182.158 74.8989 181.904 74.5705C181.649 74.2421 181.508 73.8396 181.503 73.424C181.497 73.0084 181.627 72.6023 181.873 72.2672C182.119 71.9321 182.467 71.6863 182.865 71.5669L212.528 62.3494C212.829 62.2582 213.103 62.0941 213.325 61.8717C213.547 61.6494 213.712 61.3756 213.803 61.0747L222.922 31.4121C223.031 31.0109 223.267 30.656 223.596 30.4013C223.924 30.1465 224.327 30.0057 224.742 30.0002C225.158 29.9946 225.564 30.1247 225.899 30.3706C226.234 30.6165 226.48 30.9649 226.599 31.363L235.817 61.0257C235.908 61.3266 236.072 61.6003 236.295 61.8227C236.517 62.0451 236.791 62.2091 237.092 62.3004Z" fill="currentColor"></path>
+            <path d="M155.948 155.848L202.771 168.939C203.449 169.131 204.045 169.539 204.47 170.101C204.895 170.663 205.125 171.348 205.125 172.052C205.125 172.757 204.895 173.442 204.47 174.004C204.045 174.566 203.449 174.974 202.771 175.166L155.899 188.06C155.361 188.209 154.87 188.496 154.475 188.891C154.079 189.286 153.793 189.777 153.644 190.316L140.553 237.138C140.361 237.816 139.953 238.413 139.391 238.838C138.829 239.262 138.144 239.492 137.44 239.492C136.735 239.492 136.05 239.262 135.488 238.838C134.927 238.413 134.519 237.816 134.327 237.138L121.432 190.267C121.283 189.728 120.997 189.237 120.601 188.842C120.206 188.446 119.715 188.16 119.177 188.011L72.3537 174.92C71.676 174.728 71.0795 174.32 70.6547 173.759C70.2299 173.197 70 172.512 70 171.807C70 171.103 70.2299 170.418 70.6547 169.856C71.0795 169.294 71.676 168.886 72.3537 168.694L119.226 155.799C119.764 155.65 120.255 155.364 120.65 154.969C121.046 154.573 121.332 154.082 121.481 153.544L134.572 106.721C134.764 106.043 135.172 105.447 135.734 105.022C136.295 104.597 136.981 104.367 137.685 104.367C138.389 104.367 139.075 104.597 139.637 105.022C140.198 105.447 140.606 106.043 140.798 106.721L153.693 153.593C153.842 154.131 154.128 154.622 154.524 155.018C154.919 155.413 155.41 155.699 155.948 155.848Z" fill="currentColor"></path>
+            <path d="M386.827 289.992C404.33 292.149 403.84 305.828 386.876 307.299C346.623 310.829 298.869 316.271 282.199 360.005C274.844 379.192 269.942 403.2 267.49 432.029C267.427 432.846 267.211 433.626 266.856 434.319C266.501 435.012 266.015 435.602 265.431 436.05C254.988 444.041 251.212 434.186 250.183 425.606C239.2 332.353 214.588 316.909 124.668 306.122C123.892 306.031 123.151 305.767 122.504 305.35C121.857 304.933 121.322 304.375 120.942 303.72C116.399 295.679 119.324 291.038 129.718 289.796C224.688 278.47 236.062 262.83 250.183 169.331C252.177 156.355 257.259 154.083 265.431 162.516C266.51 163.593 267.202 165.099 267.392 166.782C279.257 258.564 293.328 278.617 386.827 289.992Z" fill="currentColor"></path>
+          </svg>
+          <span>Ask AI</span>
+        </div>
+      </div></template></div></body></html>
